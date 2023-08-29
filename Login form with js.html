@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html, Css and Javascript</title>
+    <style>
+        .container {
+            border: 2px solid black;
+            height: auto;
+            width: 1140px;
+            padding-bottom: 30px;
+            background-color: aquamarine;
+        }
+
+        .container2 {
+            border: 2px solid black;
+            height: 400px;
+            width: 500px;
+            /* display: flex; */
+            margin-left: 30%;
+            text-align: center;
+            box-shadow: 5px 12px 0px 11px #00000012;
+        }
+
+        #btn1 {
+            border: 1px solid black;
+            border-radius: 5px;
+            color: red;
+            background-color: blueviolet;
+        }
+
+        #btn {
+            border: 1px solid black;
+            border-radius: 5px;
+            color: blue;
+            background-color: salmon;
+        }
+        body{
+            background-image: url("image.jpg");
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- <h2>This Is Complete Web Development Code.</h2> -->
+        <h2 style="text-align: center;">Login Form</h2>
+        <div class="container2"><br><br>
+            <form name="valid">
+                Email/UserName:<input style="text-align: center;" type="text" name="email" id="email">
+                <br><br>
+                Passward:<input style="text-align: center;" type="password" name="pswd" id="pswd">
+                <br><br>
+                <input  type="button" name="btn" value="Login" id="btn" onclick="table()">
+
+                <input  type="button" name="btn1" value="Sign up" id="btn1" onclick="changepage()">
+                <!-- onclick="document.location.href='style.html'"> -->
+
+
+                <div id="main"></div>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+function changepage()
+{
+    document.location.href="style.html";
+}
+        function table() {
+            a = document.valid.email.value;
+            b = document.valid.pswd.value;
+            if (a == "Amit" && b == "Abhay") {
+                document.getElementById('main').innerHTML = "<span style='color:red;'>valid user</spam>";
+            }
+            else {
+                // document.getElementById('main').innerHTML="Invalid user";
+                document.getElementById('main').innerHTML = "<span style='color:red;'>Invalid User</span>";
+            }
+        }
+    </script>
+</body>
+
+</html>

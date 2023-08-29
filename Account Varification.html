@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Varification</title>
+</head>
+<style>
+    .container{
+        border: 3px solid black;
+        text-align: center;
+        height: auto;
+        width: 1000px;
+        margin: 30px;
+        padding: 30px;
+
+    }
+</style>
+<body>
+    <div class="container">
+        Account Number:<input type="numbera" id="numbera" placeholder="Enter your acc. number"><br><br>
+        Re-Enter Account number: <input type="number" id="number" placeholder="Re-enter your acc. number" onkeyup="valid()"><span id="match"></span> 
+    </div>
+
+    <script>
+        function valid(){
+            numbera = document.getElementById('numbera').value;
+            number = document.getElementById('number').value;
+
+            l=numbera.length;
+            l1=number.length;
+
+            //alert(l)
+            if(l==l1)
+            {
+                if(numbera == number){
+                //  document.write("Account Matched")
+                document.getElementById('match').innerHTML="<span style='color:green;font-weight:700;'>Matched</span>";
+                }else{
+                // document.write("Account is'nt Matched")
+                document.getElementById('match').innerHTML="<span style='color:red;font-weight:700;'>Incorrect</span>";
+                }
+            }
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>upload files using js</title>
+</head>
+<style>
+    .container{
+        text-align: center;
+        border: 2px solid black;
+        margin-bottom: 30px;
+        padding-bottom: 50px;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Browse Files</h1>
+        Upload Image:&nbsp;&nbsp;<input type="file" name="ufile" id="ufile">
+        <div><br>
+            
+        </div>
+        Click on:&nbsp;&nbsp;<input type="button" name="abutton" id="abutton" value="Preview" >
+    </div>
+    <div id="PreviewContainer"></div>
+    <script>
+        a=document.getElementById('ufille').value;
+        //document.getElementById
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>upload files using js</title>
+</head>
+<style>
+    .container {
+        text-align: center;
+        border: 2px solid black;
+        margin-bottom: 30px;
+        padding-bottom: 50px;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Browse Files</h1>
+        Upload Image:&nbsp;&nbsp;<input type="file" name="ufile" id="ufile">
+        <div><br>
+            
+        </div>
+        Click on:&nbsp;&nbsp;<input type="button" name="abutton" id="abutton" value="Preview" onclick="preview()">
+    </div>
+    <div id="PreviewContainer"></div>
+    <script>
+        function preview() {
+            var fileInput = document.getElementById('ufile');
+            var files = fileInput.files;
+
+            if (files.length > 0) {
+                var file = files[0];
+                var reader = new FileReader();
+
+                reader.onload = function(event) {
+                    var image = new Image();
+                    image.src = event.target.result;
+                    image.style.maxWidth = '300px';
+                    image.style.maxHeight = '300px';
+
+                    var previewContainer = document.getElementById('PreviewContainer');
+                    previewContainer.innerHTML = '';
+                    previewContainer.appendChild(image);
+                };
+
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+</body>
+</html>
